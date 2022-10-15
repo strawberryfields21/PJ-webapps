@@ -72,6 +72,7 @@ namespace PutraJayaWebApps.Controllers
             }
             return RedirectToAction("Customer", "Dashboard", new { Message = "Success" });
         }
+        [Auth]
         public ActionResult DeleteCustomer(int id)
         {
             var db = new Entities.PutraJayaAppsEntities();
@@ -84,6 +85,11 @@ namespace PutraJayaWebApps.Controllers
                 db.SaveChanges();
             }
             return RedirectToAction("Customer", "Dashboard", new { Message = "Success" });
+        }
+        [Auth]
+        public ActionResult Bahan()
+        {
+            return View();
         }
     }
 }
