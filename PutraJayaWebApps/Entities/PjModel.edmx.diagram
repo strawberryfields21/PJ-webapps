@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0216a2090cc440e99a676db60ac1b639" Name="Diagram1">
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsInventory" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsMenu" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsOrder" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsPayment" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsRole" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsTransaction" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsTransactionDetail" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsTransactionInventory" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PutraJayaAppsModel.FK_MsOrder_MsTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="PutraJayaAppsModel.FK_MsTransactionInventory_MsTransaction" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsUser" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="PutraJayaAppsModel.MsCustomer" Width="1.5" PointX="5.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

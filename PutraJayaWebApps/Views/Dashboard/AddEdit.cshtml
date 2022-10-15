@@ -1,0 +1,82 @@
+﻿@model PutraJayaWebApps.Entities.MsCustomer
+@{
+    ViewBag.Title = "AddEdit";
+}
+
+    <ol class="breadcrumb pull-left">
+        <li><a href="javascript:;">Home</a></li>
+        <li class="active"><a href="javascript:;">Customer</a></li>
+    </ol>
+
+    <div class="row">
+
+        <div class="col-md-12 ui-sortable">
+            @*<h2><b>Tambah Customer</b></h2>*@
+            <!-- begin panel -->
+            <div class="panel panel-inverse">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                    <h4 class="panel-title">Panel Tambah Customer</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-9 ui-sortable">
+                        <div class="form-horizontal">
+                            <form action="@Url.Action("AddEdit","Dashboard")" method="POST" class="margin-bottom-0" id="form">
+                                @Html.HiddenFor(x => x.CustomerID)
+                                <div class="form-group">
+                                    <div class="col-md-1 control-label">Nama Customer</div>
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(x => x.CustomerName, new { @class = "form-control" , @placeholder= "Nama Customer" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-1 control-label">Alamat Customer</div>
+                                    <div class="col-md-9">
+                                        @Html.TextAreaFor(x => x.CustomerAddress, new { @class = "form-control", @placeholder = "Alamat Customer" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-1 control-label">No Telp Customer</div>
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(x => x.CustomerPhone, new { @class = "form-control", @placeholder = "no Telp Customer" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-1 control-label">Email Customer</div>
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(x => x.CustomerEmail, new { @class = "form-control", @placeholder = "Email Customer" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-1 control-label">Nama Perusahaan</div>
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(x => x.CustomerCompany, new { @class = "form-control" , @placeholder = "Nama Perusahaan" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-1 control-label">NPWP</div>
+                                    <div class="col-md-9">
+                                        @Html.TextBoxFor(x => x.CustomerNPWP, new { @class = "form-control", @placeholder = "NPWP" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-1 control-label"></div>
+                                    <div class="col-md-9">
+                                        <button type="submit" class="btn-sm btn-success">Simpan</button>
+                                        <a href="@Url.Action("Customer","Dashboard")" class="btn btn-sm btn-default">Kembali</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

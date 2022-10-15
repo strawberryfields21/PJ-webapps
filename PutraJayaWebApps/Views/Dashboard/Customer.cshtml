@@ -1,0 +1,73 @@
+﻿@model List<PutraJayaWebApps.Entities.MsCustomer>
+@{
+    ViewBag.Title = "Customer";
+    var index = 0;
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" integrity="sha512-CwHUCK55pONjDxvPZQeuwKpxos8mPyEv9gGuWC8Vr0357J2uXg1PycGDPND9EgdokSFTG6kgSApoDj9OM22ksw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="~/assets/plugins/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+<ol class="breadcrumb pull-left">
+    <li><a href="javascript:;">Home</a></li>
+    <li class="active"><a href="javascript:;">Customer</a></li>
+</ol>
+
+<div class="row">
+
+    <div class="col-md-12 ui-sortable">
+        <h2><b>Data Customer</b></h2>
+        <!-- begin panel -->
+        <div class="panel panel-inverse">
+            <div class="panel-heading">
+                <div class="panel-heading-btn">
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                </div>
+                <a href="@Url.Action("AddEdit","Dashboard",new { id = 0 })" class="btn btn-success">Tambah Data Customer</a>
+            </div>
+            <div class="panel-body">
+                <table class="table table-responsive" id="dtTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama Customer</th>
+                            <th>Telepon</th>
+                            <th>Alamat</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            index++;
+                            <tr>
+                                <td>@index</td>
+                                <td>@item.CustomerName</td>
+                                <td>@item.CustomerPhone</td>
+                                <td>@item.CustomerAddress</td>
+                                <td>@item.CustomerEmail</td>
+                                <td>
+                                    <a href="@Url.Action("AddEdit","dashboard",new { id= item.CustomerID})" class="btn btn-sm btn-success">Edit</a>
+                                    <a href="@Url.Action("DeleteCustomer","dashboard",new { id= item.CustomerID})" class="btn btn-sm btn-danger">Hapus</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#dtTable").DataTable();
+    })
+</script>
